@@ -1,14 +1,46 @@
 import { useEffect, useRef } from 'react';
+import { MessageSquare, Star } from 'lucide-react';
+import depoimento1 from '../assets/depoimento1.jpg';
+import depoimento2 from '../assets/depoimento2.jpg';
+import depoimento3 from '../assets/depoimento3.jpg';
+import depoimento4 from '../assets/depoimento2 (1).jpg';
 
 const testimonialImages = [
-  'https://images.pexels.com/photos/887751/pexels-photo-887751.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/4064840/pexels-photo-4064840.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/3771787/pexels-photo-3771787.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/887751/pexels-photo-887751.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/4064840/pexels-photo-4064840.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/3771787/pexels-photo-3771787.jpeg?auto=compress&cs=tinysrgb&w=400',
-  'https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg?auto=compress&cs=tinysrgb&w=400'
+  depoimento1,
+  depoimento2,
+  depoimento3,
+  depoimento4,
+  depoimento1,
+  depoimento2,
+  depoimento3,
+  depoimento4
+];
+
+const testimonials = [
+  {
+    name: 'joneduassistec',
+    business: 'Assistência Técnica',
+    message: 'Top comprei, muito bom e completo. Vale a pena!',
+    rating: 5
+  },
+  {
+    name: 'Cliente Satisfeito',
+    business: 'Loja de Celulares',
+    message: 'Já estamos usando aqui na loja, facilita demais nossa vida que é corrida, não temos tempo de ficar toda hora editando vídeo nem criando postagens, as meninas aqui adoraram kkkk',
+    rating: 5
+  },
+  {
+    name: 'Dono de Loja',
+    business: 'Assistência Técnica',
+    message: 'Muito bom irmão tá de parabéns. No início pensei que era golpe, mas meti a cara mesmo assim, pelo preço que c tá vendendo tá muito de graça. Vlw meu amigo. Qualquer dúvida só chamar. Pra cima!',
+    rating: 5
+  },
+  {
+    name: 'Empreendedor',
+    business: 'Cell Express',
+    message: 'Show de bola! Fica ligado aí que essa semana tem atualizações de artes editáveis, muita coisa nova...',
+    rating: 5
+  }
 ];
 
 export default function SocialProof() {
@@ -46,16 +78,16 @@ export default function SocialProof() {
           O que donos de loja estão dizendo 👇
         </h2>
 
-        <div className="mt-12 relative overflow-hidden">
+        <div className="mt-12 relative">
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-hidden"
+            className="flex gap-4 overflow-x-hidden scroll-smooth"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {testimonialImages.map((image, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[320px] h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-teal-500/50 hover:border-teal-400 transition-all duration-300"
+                className="flex-shrink-0 w-[320px] h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-teal-500/50 hover:border-teal-400 transition-all duration-300 hover:scale-105"
               >
                 <img
                   src={image}
@@ -69,6 +101,33 @@ export default function SocialProof() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 mt-16">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="bg-gradient-to-br from-teal-600/30 to-cyan-600/30 backdrop-blur-sm rounded-2xl p-8 hover:shadow-glow-teal transition-all duration-300 border-2 border-teal-400/40 hover:border-cyan-400 hover:scale-105"
+            >
+              <div className="flex items-center space-x-2 mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-teal-500 text-teal-500" />
+                ))}
+              </div>
+
+              <div className="flex items-start space-x-3 mb-4">
+                <MessageSquare className="w-6 h-6 text-teal-500 flex-shrink-0 mt-1" />
+                <p className="text-gray-200 text-lg leading-relaxed italic">
+                  "{testimonial.message}"
+                </p>
+              </div>
+
+              <div className="mt-4 pt-4 border-t border-teal-500/30">
+                <p className="font-bold text-white">{testimonial.name}</p>
+                <p className="text-sm text-gray-300">{testimonial.business}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="mt-16 bg-gradient-cta rounded-2xl p-8 text-center shadow-glow-teal">
