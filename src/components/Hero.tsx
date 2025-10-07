@@ -23,7 +23,7 @@ export default function Hero() {
           +2.700 mídias prontas podem <span className="text-teal-400">multiplicar o faturamento</span> da sua loja de celulares ou assistência técnica, de forma rápida e simples!
         </h1>
 
-        <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+        <p className="text-base sm:text-xl text-teal-300 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
           Esqueça Outros Pacotes de Marketing! Nós Preparamos Tudo Para Você Alavancar Sua Empresa Agora!
         </p>
 
