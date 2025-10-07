@@ -45,7 +45,18 @@ export default function Pricing() {
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-white mb-2">MARKETING SIMPLES</h3>
               <p className="text-sm text-gray-300 font-medium mb-6">acesso imediato</p>
+            </div>
 
+            <div className="space-y-3 mb-8">
+              {basicIncludes.map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-200 font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
               <div className="mb-6">
                 <span className="text-5xl font-extrabold text-white">R$9,90</span>
               </div>
@@ -56,15 +67,6 @@ export default function Pricing() {
               >
                 QUERO ESSA OPÇÃO
               </button>
-            </div>
-
-            <div className="space-y-3">
-              {basicIncludes.map((item, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-200 font-medium">{item}</span>
-                </div>
-              ))}
             </div>
           </div>
 
@@ -78,19 +80,6 @@ export default function Pricing() {
             <div className="text-center mb-8">
               <h3 className="text-3xl font-extrabold text-white mb-2">SUPER OFERTA</h3>
               <p className="text-sm text-teal-100 font-bold mb-4">porque sua empresa vale muito mais</p>
-
-              <div className="mb-4">
-                <div className="text-teal-200 line-through text-3xl mb-1 font-bold">R$ 597,00</div>
-                <div className="text-6xl font-extrabold text-white mb-2">R$27,90</div>
-                <div className="text-teal-100 font-bold text-lg">MAIS BARATO QUE UMA PIZZA!</div>
-              </div>
-
-              <button
-                onClick={() => handlePurchase('https://pay.cakto.com.br/dzcr2op')}
-                className="w-full bg-white hover:bg-gray-100 text-teal-600 font-bold py-5 px-8 rounded-xl transition-all duration-200 hover:scale-105 shadow-lg text-lg animate-pulse-slow"
-              >
-                🔥 QUERO ESSA OPÇÃO
-              </button>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-white/20">
@@ -105,7 +94,7 @@ export default function Pricing() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20">
               <h4 className="font-bold text-white mb-4 text-lg">BÔNUS EXCLUSIVOS:</h4>
               <div className="space-y-2">
                 {bonuses.map((bonus, index) => (
@@ -115,6 +104,21 @@ export default function Pricing() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div className="text-center">
+              <div className="mb-4">
+                <div className="text-teal-200 line-through text-3xl mb-1 font-bold">R$ 597,00</div>
+                <div className="text-6xl font-extrabold text-white mb-2">R$27,90</div>
+                <div className="text-teal-100 font-bold text-lg">MAIS BARATO QUE UMA PIZZA!</div>
+              </div>
+
+              <button
+                onClick={() => handlePurchase('https://pay.cakto.com.br/dzcr2op')}
+                className="w-full bg-white hover:bg-gray-100 text-teal-600 font-bold py-5 px-8 rounded-xl transition-all duration-200 hover:scale-105 shadow-lg text-lg animate-pulse-slow"
+              >
+                🔥 QUERO ESSA OPÇÃO
+              </button>
             </div>
           </div>
         </div>
