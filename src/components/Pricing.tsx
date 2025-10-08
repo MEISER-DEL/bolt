@@ -108,7 +108,7 @@ export default function Pricing() {
 
             <div className="text-center">
               <div className="mb-4">
-                <div className="text-teal-200 line-through text-3xl mb-1 font-bold">R$ 597,00</div>
+                <div className="text-teal-200 line-through text-3xl mb-1 font-bold">R$ 97,00</div>
                 <div className="text-6xl font-extrabold text-white mb-2">R$27,90</div>
                 <div className="text-teal-100 font-bold text-lg">MAIS BARATO QUE UMA PIZZA!</div>
               </div>
